@@ -120,7 +120,7 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 <br>
 <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" />
 <img src="https://img.shields.io/badge/KILO_Code-00D2FF?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
-<img src="https://img.shields.io/badge/Codex-000000?style=for-the-badge&logo=openai&logoColor=white" />
+<img src="https://img.shields.io/badge/Codex-000000?style=for-the-badge&logo=openai&logoColor=white&cacheSeconds=0" />
 <br>
 <img src="https://img.shields.io/badge/Claude-FF6B35?style=for-the-badge&logo=anthropic&logoColor=white" />
 <img src="https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" />
