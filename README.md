@@ -110,10 +110,18 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 ## Contribution Snake
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/er-mayanka/er-mayanka/output/github-contribution-grid-snake.svg" alt="Contribution snake animation" />
+  <img src="https://raw.githubusercontent.com/er-mayanka/er-mayanka/output-snake/github-contribution-grid-snake.svg" alt="Contribution snake animation" />
 </p>
 
 <sub>Set up takes two minutes. See the setup notes shared alongside this file.</sub>
+
+<br>
+
+## GitHub Trophies
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/er-mayanka/er-mayanka/output-trophies/trophies.svg" alt="GitHub Trophies" />
+</p>
 
 <br>
 

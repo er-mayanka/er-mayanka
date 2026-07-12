@@ -221,7 +221,7 @@ jobs:
       - name: push trophy svg
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          target_branch: output
+          target_branch: output-trophies
           build_dir: .
           keep_files: true
         env:
