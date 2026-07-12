@@ -97,6 +97,9 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 <td width="33%" valign="top" align="center">
 
 ### AI & LLM
+
+**Models**
+<br>
 <img src="https://img.shields.io/badge/Qwen2.5--Coder-FF6B35?style=for-the-badge&logo=qwen&logoColor=white" />
 <img src="https://img.shields.io/badge/Qwen3-00A8E8?style=for-the-badge&logo=qwen&logoColor=white" />
 <img src="https://img.shields.io/badge/Qwen3.6-00A8E8?style=for-the-badge&logo=qwen&logoColor=white" />
@@ -105,16 +108,24 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 <img src="https://img.shields.io/badge/Mistral-00A8E8?style=for-the-badge&logo=mistral&logoColor=white" />
 <img src="https://img.shields.io/badge/Gemma-4285F4?style=for-the-badge&logo=google&logoColor=white" />
 <br>
+<img src="https://img.shields.io/badge/Nemotron-76B900?style=for-the-badge&logo=nvidia&logoColor=white" />
+<img src="https://img.shields.io/badge/Kimi-Moon-00A8E8?style=for-the-badge&logo=moonshot&logoColor=white" />
+<br>
+<img src="https://img.shields.io/badge/Qwen3--Coder-FF6B35?style=for-the-badge&logo=qwen&logoColor=white" />
+<img src="https://img.shields.io/badge/DeepSeek-00A8E8?style=for-the-badge&logo=deepseek&logoColor=white" />
+
+<br>
+
+**Coding Tools**
+<br>
 <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" />
 <img src="https://img.shields.io/badge/KILO_Code-00D2FF?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
 <img src="https://img.shields.io/badge/Codex-000000?style=for-the-badge&logo=openai&logoColor=white" />
 <br>
 <img src="https://img.shields.io/badge/Claude-FF6B35?style=for-the-badge&logo=anthropic&logoColor=white" />
 <img src="https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" />
-<img src="https://img.shields.io/badge/Nemotron-76B900?style=for-the-badge&logo=nvidia&logoColor=white" />
 <br>
-<img src="https://img.shields.io/badge/Kimi-Moon-00A8E8?style=for-the-badge&logo=moonshot&logoColor=white" />
-<img src="https://img.shields.io/badge/Agentic_AI-00FFAA?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Agentic_AI-5C6BC0?style=for-the-badge" />
 
 </td>
 </tr>
