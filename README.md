@@ -35,7 +35,7 @@ I'm **Mayank Agrawal**, founder of **ZethraOS**, an AI-native operating system b
 ### ZethraOS
 **The AI-Native OS for Every Screen**
 
-Next-gen operating system on Rust and Linux 6.x. Core engine **ZethraAI** autonomously monitors device health, correlates crash data across the device graph, and generates cryptographically signed micro-patches, collapsing the exploit window from days to seconds.
+Next-gen operating system on Rust and Linux 7.1. Core engine **ZethraAI** autonomously monitors device health, correlates crash data across the device graph, and generates cryptographically signed micro-patches, collapsing the exploit window from days to seconds.
 
 `Rust` `Linux Kernel` `On-Device AI` `Memory Safety` `Apache 2.0`
 
