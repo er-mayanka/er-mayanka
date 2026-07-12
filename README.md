@@ -125,6 +125,7 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 <img src="https://img.shields.io/badge/Claude-FF6B35?style=for-the-badge&logo=anthropic&logoColor=white" />
 <img src="https://img.shields.io/badge/Antigravity-FFFFFF?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAACb0lEQVR4AezSO2hTURgH8P+5j7xTW9PamKTUNKYZCnZwKDgJIjjqUtBVdHJw0qSLoy/EQdxEcHHp7F5BwfpoVRSilkRtojWN1jTPe3NvPk+GwM01jxsUB+mFy3l/P77vHAH/4NtBBiryQOX6eidG+UsH6OeZORpEsYw8enCIsuI4vsk+bNs92Dp5xDJkCbn38Di90wJIIoC0HEDW5sN3DuVOHLMEWUJS6jjWtH1INqJ4L0aRcoaRcQbxw+GzVLW+yIWl87ReC+CjEkZKiyJJMXwQY1iz78e6axJv5s/2zaYv8qW8F7nyJHK1MDaUKWQogpQ0jZQjhpR7Gp+GIn2z6YvkiyEUKhMoV0Mo6UFsUwCbYggZexhpdxRpb+zPkKOL96lUDaJW9UNVx6DVR6DQCIrCbuTlPcg6gvjsmcLNxFLPkvXMpFgMQqn4oSujgOoF6S7oDTvqzIWy6MWWPIoNpx8Z90TPbHoianWMA8OA7gE1HFhN2NjKgsSW4xJTmMQhJwrSEHL8SfdSuiIzt9/mNWUYpDUzkDkgMWOgJ3GRqRBQhIyC4Map65VzxnVjvytC6i4faW6QzoG4rQ1oBXh8kbE6GMok8Huy3WrNm9uuiMgBxusfjciS+ZBxrOrstNoQUOG/cd7Y74jM3NgkgQMiiVicZ7rxgLm/nGB3lQZQ47sOX9U6vrKOiKi5+EVL/B7kjmUyQ08TjKk8vMLLZl5rjn9DZq+VeBYyXvOX1Nxg9X+WEFidGOYuE+faT7Uhs1eqJOh2vBwQaIV8zjOqc+KgCWpDXsWdbDVhrUStwOZ2ZYGxFxwzzrchxoW/2f9/kF8AAAD//6qOzWgAAAAGSURBVAMAsQPfM6iaRA4AAAAASUVORK5CYII=&logoColor=black" />
 <img src="https://img.shields.io/badge/Perplexity-20808D?style=for-the-badge&logo=perplexity&logoColor=white" />
+<img src="https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white" />
 <br>
 <img src="https://img.shields.io/badge/Agentic_AI-5C6BC0?style=for-the-badge" />
 
