@@ -93,16 +93,16 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 ## GitHub Stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=er-mayanka&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=er-mayanka&layout=compact&theme=tokyonight&hide_border=true" />
+  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api?username=er-mayanka&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
+  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=er-mayanka&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=er-mayanka&theme=tokyonight&hide_border=true" alt="Streak stats" />
+  <img src="https://streak-stats.demolab.com/?user=er-mayanka&theme=tokyonight&hide_border=true" alt="Streak stats" />
 </p>
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=er-mayanka&theme=algolia&no-frame=true&row=1&margin-w=15" alt="Trophies" />
+  <img src="https://raw.githubusercontent.com/er-mayanka/er-mayanka/output/trophies.svg" alt="GitHub Trophies" />
 </p>
 
 <br>
