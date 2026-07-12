@@ -83,89 +83,93 @@ jobs:
             }
 
       - name: generate trophy svg
-        id: trophy
         run: |
-          STATS='${{ toJson(steps.stats.outputs.result) }}'
-          echo "$STATS" > stats.json
-          
           cat > generate_trophy.py << 'PYEOF'
           import json
+          import os
           
-          with open('stats.json') as f:
-              s = json.load(f)
+          # Read stats from GitHub Actions output (may be double-encoded)
+          stats_raw = os.environ.get('STATS', '{}')
+          try:
+              s = json.loads(stats_raw)
+              # If it's a string, parse again
+              if isinstance(s, str):
+                  s = json.loads(s)
+          except:
+              s = {}
           
           trophies = []
           
           # Stars trophies
-          if s['totalStars'] >= 1000:
+          if s.get('totalStars', 0) >= 1000:
               trophies.append(('💎', 'Diamond', f"{s['totalStars']:,} stars"))
-          elif s['totalStars'] >= 500:
+          elif s.get('totalStars', 0) >= 500:
               trophies.append(('💠', 'Ruby', f"{s['totalStars']:,} stars"))
-          elif s['totalStars'] >= 100:
+          elif s.get('totalStars', 0) >= 100:
               trophies.append(('⭐', 'Star Gazer', f"{s['totalStars']:,} stars"))
-          elif s['totalStars'] >= 50:
+          elif s.get('totalStars', 0) >= 50:
               trophies.append(('✨', 'Rising Star', f"{s['totalStars']:,} stars"))
-          elif s['totalStars'] >= 10:
+          elif s.get('totalStars', 0) >= 10:
               trophies.append(('🌟', 'Stargazer', f"{s['totalStars']:,} stars"))
           
           # Commits trophies
-          if s['totalCommits'] >= 10000:
+          if s.get('totalCommits', 0) >= 10000:
               trophies.append(('🔥', 'Fire', f"{s['totalCommits']:,} commits"))
-          elif s['totalCommits'] >= 5000:
+          elif s.get('totalCommits', 0) >= 5000:
               trophies.append(('⚡', 'Lightning', f"{s['totalCommits']:,} commits"))
-          elif s['totalCommits'] >= 1000:
+          elif s.get('totalCommits', 0) >= 1000:
               trophies.append(('📝', 'Scribe', f"{s['totalCommits']:,} commits"))
-          elif s['totalCommits'] >= 500:
+          elif s.get('totalCommits', 0) >= 500:
               trophies.append(('✍️', 'Writer', f"{s['totalCommits']:,} commits"))
           
           # PRs trophies
-          if s['mergedPRs'] >= 500:
+          if s.get('mergedPRs', 0) >= 500:
               trophies.append(('🔀', 'Merger', f"{s['mergedPRs']} PRs merged"))
-          elif s['mergedPRs'] >= 100:
+          elif s.get('mergedPRs', 0) >= 100:
               trophies.append(('🤝', 'Collaborator', f"{s['mergedPRs']} PRs merged"))
-          elif s['mergedPRs'] >= 50:
+          elif s.get('mergedPRs', 0) >= 50:
               trophies.append(('🔄', 'Contributor', f"{s['mergedPRs']} PRs merged"))
           
           # Issues trophies
-          if s['closedIssues'] >= 200:
+          if s.get('closedIssues', 0) >= 200:
               trophies.append(('🐛', 'Bug Hunter', f"{s['closedIssues']} issues closed"))
-          elif s['closedIssues'] >= 50:
+          elif s.get('closedIssues', 0) >= 50:
               trophies.append(('🔧', 'Fixer', f"{s['closedIssues']} issues closed"))
           
           # Followers trophies
-          if s['followers'] >= 1000:
+          if s.get('followers', 0) >= 1000:
               trophies.append(('👑', 'Influencer', f"{s['followers']:,} followers"))
-          elif s['followers'] >= 500:
+          elif s.get('followers', 0) >= 500:
               trophies.append(('🌟', 'Popular', f"{s['followers']:,} followers"))
-          elif s['followers'] >= 100:
+          elif s.get('followers', 0) >= 100:
               trophies.append(('👥', 'Social', f"{s['followers']:,} followers"))
-          elif s['followers'] >= 50:
+          elif s.get('followers', 0) >= 50:
               trophies.append(('🤝', 'Connected', f"{s['followers']:,} followers"))
           
           # Repos trophies
-          if s['publicRepos'] >= 50:
+          if s.get('publicRepos', 0) >= 50:
               trophies.append(('📦', 'Packager', f"{s['publicRepos']} repositories"))
-          elif s['publicRepos'] >= 20:
+          elif s.get('publicRepos', 0) >= 20:
               trophies.append(('🏗️', 'Builder', f"{s['publicRepos']} repositories"))
-          elif s['publicRepos'] >= 10:
+          elif s.get('publicRepos', 0) >= 10:
               trophies.append(('🛠️', 'Creator', f"{s['publicRepos']} repositories"))
           
           # Account age
-          if s['accountAge'] >= 10:
+          if s.get('accountAge', 0) >= 10:
               trophies.append(('🏛️', 'Veteran', f"{s['accountAge']} years on GitHub"))
-          elif s['accountAge'] >= 5:
+          elif s.get('accountAge', 0) >= 5:
               trophies.append(('🎖️', 'Senior', f"{s['accountAge']} years on GitHub"))
-          elif s['accountAge'] >= 3:
+          elif s.get('accountAge', 0) >= 3:
               trophies.append(('🥈', 'Experienced', f"{s['accountAge']} years on GitHub"))
           
           # Contributions streak (approximate from total)
-          if s['totalContributions'] >= 5000:
+          if s.get('totalContributions', 0) >= 5000:
               trophies.append(('📅', 'Streak Master', f"{s['totalContributions']:,} contributions"))
-          elif s['totalContributions'] >= 1000:
+          elif s.get('totalContributions', 0) >= 1000:
               trophies.append(('📈', 'Consistent', f"{s['totalContributions']:,} contributions"))
           
           # Top languages badge
-          if s['topLangs']:
+          if s.get('topLangs'):
               trophies.append(('💻', 'Polyglot', s['topLangs']))
           
           # Generate SVG
@@ -211,6 +215,8 @@ jobs:
           print(f"Generated {len(trophies)} trophies")
           PYEOF
           python3 generate_trophy.py
+        env:
+          STATS: ${{ steps.stats.outputs.result }}
 
       - name: push trophy svg
         uses: crazy-max/ghaction-github-pages@v4
