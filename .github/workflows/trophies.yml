@@ -1,0 +1,223 @@
+name: generate trophies
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fetch github stats
+        id: stats
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: user } = await github.rest.users.getByUsername({ username: 'er-mayanka' })
+            const { data: repos } = await github.rest.repos.listForUser({
+              username: 'er-mayanka',
+              per_page: 100,
+              sort: 'pushed'
+            })
+
+            const { data: events } = await github.rest.activity.listPublicEventsForUser({
+              username: 'er-mayanka',
+              per_page: 100
+            })
+
+            // GraphQL for more detailed stats
+            const query = `
+              query($login: String!) {
+                user(login: $login) {
+                  repositories(first: 100, privacy: PUBLIC) {
+                    totalCount
+                    nodes {
+                      stargazerCount
+                      forkCount
+                      primaryLanguage { name }
+                      createdAt
+                    }
+                  }
+                  pullRequests(first: 100, states: MERGED) { totalCount }
+                  issues(first: 100, states: CLOSED) { totalCount }
+                  contributionsCollection {
+                    totalCommitContributions
+                    contributionCalendar { totalContributions }
+                  }
+                  followers { totalCount }
+                  following { totalCount }
+                  createdAt
+                }
+              }
+            `
+            const { data: graphql } = await github.graphql(query, { login: 'er-mayanka' })
+
+            const u = graphql.user
+            const totalStars = u.repositories.nodes.reduce((a, r) => a + r.stargazerCount, 0)
+            const totalForks = u.repositories.nodes.reduce((a, r) => a + r.forkCount, 0)
+            const languages = u.repositories.nodes
+              .filter(r => r.primaryLanguage)
+              .map(r => r.primaryLanguage.name)
+            const topLangs = [...new Set(languages)].slice(0, 5)
+
+            const accountAge = Math.floor((Date.now() - new Date(u.createdAt).getTime()) / (1000 * 60 * 60 * 24 * 365))
+
+            return {
+              name: user.name || 'er-mayanka',
+              bio: user.bio,
+              avatar: user.avatar_url,
+              publicRepos: u.repositories.totalCount,
+              totalStars,
+              totalForks,
+              totalCommits: u.contributionsCollection.totalCommitContributions,
+              totalContributions: u.contributionsCollection.contributionCalendar.totalContributions,
+              mergedPRs: u.pullRequests.totalCount,
+              closedIssues: u.issues.totalCount,
+              followers: u.followers.totalCount,
+              following: u.following.totalCount,
+              accountAge,
+              topLangs: topLangs.join(', ')
+            }
+
+      - name: generate trophy svg
+        id: trophy
+        run: |
+          STATS='${{ toJson(steps.stats.outputs.result) }}'
+          echo "$STATS" > stats.json
+          
+          cat > generate_trophy.py << 'PYEOF'
+          import json
+          
+          with open('stats.json') as f:
+              s = json.load(f)
+          
+          trophies = []
+          
+          # Stars trophies
+          if s['totalStars'] >= 1000:
+              trophies.append(('💎', 'Diamond', f"{s['totalStars']:,} stars"))
+          elif s['totalStars'] >= 500:
+              trophies.append(('💠', 'Ruby', f"{s['totalStars']:,} stars"))
+          elif s['totalStars'] >= 100:
+              trophies.append(('⭐', 'Star Gazer', f"{s['totalStars']:,} stars"))
+          elif s['totalStars'] >= 50:
+              trophies.append(('✨', 'Rising Star', f"{s['totalStars']:,} stars"))
+          elif s['totalStars'] >= 10:
+              trophies.append(('🌟', 'Stargazer', f"{s['totalStars']:,} stars"))
+          
+          # Commits trophies
+          if s['totalCommits'] >= 10000:
+              trophies.append(('🔥', 'Fire', f"{s['totalCommits']:,} commits"))
+          elif s['totalCommits'] >= 5000:
+              trophies.append(('⚡', 'Lightning', f"{s['totalCommits']:,} commits"))
+          elif s['totalCommits'] >= 1000:
+              trophies.append(('📝', 'Scribe', f"{s['totalCommits']:,} commits"))
+          elif s['totalCommits'] >= 500:
+              trophies.append(('✍️', 'Writer', f"{s['totalCommits']:,} commits"))
+          
+          # PRs trophies
+          if s['mergedPRs'] >= 500:
+              trophies.append(('🔀', 'Merger', f"{s['mergedPRs']} PRs merged"))
+          elif s['mergedPRs'] >= 100:
+              trophies.append(('🤝', 'Collaborator', f"{s['mergedPRs']} PRs merged"))
+          elif s['mergedPRs'] >= 50:
+              trophies.append(('🔄', 'Contributor', f"{s['mergedPRs']} PRs merged"))
+          
+          # Issues trophies
+          if s['closedIssues'] >= 200:
+              trophies.append(('🐛', 'Bug Hunter', f"{s['closedIssues']} issues closed"))
+          elif s['closedIssues'] >= 50:
+              trophies.append(('🔧', 'Fixer', f"{s['closedIssues']} issues closed"))
+          
+          # Followers trophies
+          if s['followers'] >= 1000:
+              trophies.append(('👑', 'Influencer', f"{s['followers']:,} followers"))
+          elif s['followers'] >= 500:
+              trophies.append(('🌟', 'Popular', f"{s['followers']:,} followers"))
+          elif s['followers'] >= 100:
+              trophies.append(('👥', 'Social', f"{s['followers']:,} followers"))
+          elif s['followers'] >= 50:
+              trophies.append(('🤝', 'Connected', f"{s['followers']:,} followers"))
+          
+          # Repos trophies
+          if s['publicRepos'] >= 50:
+              trophies.append(('📦', 'Packager', f"{s['publicRepos']} repositories"))
+          elif s['publicRepos'] >= 20:
+              trophies.append(('🏗️', 'Builder', f"{s['publicRepos']} repositories"))
+          elif s['publicRepos'] >= 10:
+              trophies.append(('🛠️', 'Creator', f"{s['publicRepos']} repositories"))
+          
+          # Account age
+          if s['accountAge'] >= 10:
+              trophies.append(('🏛️', 'Veteran', f"{s['accountAge']} years on GitHub"))
+          elif s['accountAge'] >= 5:
+              trophies.append(('🎖️', 'Senior', f"{s['accountAge']} years on GitHub"))
+          elif s['accountAge'] >= 3:
+              trophies.append(('🥈', 'Experienced', f"{s['accountAge']} years on GitHub"))
+          
+          # Contributions streak (approximate from total)
+          if s['totalContributions'] >= 5000:
+              trophies.append(('📅', 'Streak Master', f"{s['totalContributions']:,} contributions"))
+          elif s['totalContributions'] >= 1000:
+              trophies.append(('📈', 'Consistent', f"{s['totalContributions']:,} contributions"))
+          
+          # Top languages badge
+          if s['topLangs']:
+              trophies.append(('💻', 'Polyglot', s['topLangs']))
+          
+          # Generate SVG
+          cols = 3
+          rows = (len(trophies) + cols - 1) // cols
+          cell_w, cell_h = 200, 80
+          padding = 15
+          width = cols * cell_w + (cols + 1) * padding
+          height = rows * cell_h + (rows + 1) * padding + 60
+          
+          svg = f'''<?xml version="1.0" encoding="UTF-8"?>
+          <svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="100%" fill="#0d1117"/>
+            <style>
+              .title {{ font: bold 20px "Segoe UI", sans-serif; fill: #58a6ff; }}
+              .emoji {{ font: 32px "Apple Color Emoji", "Noto Color Emoji", sans-serif; }}
+              .label {{ font: bold 14px "Segoe UI", sans-serif; fill: #e6edf3; }}
+              .desc {{ font: 12px "Segoe UI", sans-serif; fill: #8b949e; }}
+            </style>
+            <text x="{width/2}" y="35" text-anchor="middle" class="title">🏆 GitHub Trophies</text>
+          '''
+          
+          for i, (emoji, label, desc) in enumerate(trophies):
+              row = i // cols
+              col = i % cols
+              x = padding + col * (cell_w + padding)
+              y = 50 + padding + row * (cell_h + padding)
+              
+              svg += f'''
+              <g transform="translate({x},{y})">
+                <rect x="0" y="0" width="{cell_w}" height="{cell_h}" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+                <text x="{cell_w/2}" y="35" text-anchor="middle" class="emoji">{emoji}</text>
+                <text x="{cell_w/2}" y="55" text-anchor="middle" class="label">{label}</text>
+                <text x="{cell_w/2}" y="70" text-anchor="middle" class="desc">{desc}</text>
+              </g>
+              '''
+          
+          svg += '</svg>'
+          
+          with open('trophies.svg', 'w') as f:
+              f.write(svg)
+          
+          print(f"Generated {len(trophies)} trophies")
+          PYEOF
+          python3 generate_trophy.py
+
+      - name: push trophy svg
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: .
+          keep_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
