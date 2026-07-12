@@ -101,10 +101,6 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
   <img src="https://streak-stats.demolab.com/?user=er-mayanka&theme=tokyonight&hide_border=true" alt="Streak stats" />
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/er-mayanka/er-mayanka/output/trophies.svg" alt="GitHub Trophies" />
-</p>
-
 <br>
 
 ## Contribution Snake
