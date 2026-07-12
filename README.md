@@ -123,7 +123,7 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 <img src="https://img.shields.io/badge/Codex-000000?style=for-the-badge&logo=openai&logoColor=white&cacheSeconds=0" />
 <br>
 <img src="https://img.shields.io/badge/Claude-FF6B35?style=for-the-badge&logo=anthropic&logoColor=white" />
-<img src="https://raw.githubusercontent.com/er-mayanka/er-mayanka/main/assets/tools-logo/antigravity.png" alt="Antigravity" height="28" style="vertical-align:middle;margin-right:6px;" /> <span style="vertical-align:middle;font-weight:600;color:#6366F1;">Antigravity</span>
+<img src="https://img.shields.io/badge/Antigravity-6366F1?style=for-the-badge&logo=vercel&logoColor=white" />
 <img src="https://img.shields.io/badge/Perplexity-20808D?style=for-the-badge&logo=perplexity&logoColor=white" />
 <br>
 <img src="https://img.shields.io/badge/Agentic_AI-5C6BC0?style=for-the-badge" />
