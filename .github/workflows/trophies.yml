@@ -24,11 +24,6 @@ jobs:
               sort: 'pushed'
             })
 
-            const { data: events } = await github.rest.activity.listPublicEventsForUser({
-              username: 'er-mayanka',
-              per_page: 100
-            })
-
             // GraphQL for more detailed stats
             const query = `
               query($login: String!) {
@@ -54,9 +49,13 @@ jobs:
                 }
               }
             `
-            const { data: graphql } = await github.graphql(query, { login: 'er-mayanka' })
-
+            const graphql = await github.graphql(query, { login: 'er-mayanka' })
+            
             const u = graphql.user
+            if (!u) {
+              throw new Error('User not found in GraphQL response')
+            }
+            
             const totalStars = u.repositories.nodes.reduce((a, r) => a + r.stargazerCount, 0)
             const totalForks = u.repositories.nodes.reduce((a, r) => a + r.forkCount, 0)
             const languages = u.repositories.nodes
