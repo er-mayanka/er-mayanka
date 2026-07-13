@@ -22,7 +22,7 @@ I'm **Mayank Agrawal**, founder of **ZethraOS**, an AI-native operating system b
 - Creator of **cursor-lite**, a fully local multi-model AI coding agent (Qwen2.5-Coder, Qwen3.5, LLaMA3.2) with zero cloud APIs
 - Rust-first systems thinker, Node.js backend engineer by trade
 - Based in Bengaluru, India
-- Fun fact: I used AI to help build an AI operating system. I architected every system, wrote every prompt, and reviewed every plan.
+- Fun fact: I used AI to build an AI operating system. I architected every system, wrote every prompt, and reviewed every plan.
 
 <br>
 
@@ -72,7 +72,7 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 <td width="25%" valign="top" align="center">
 
 ### Backend & Frameworks
-<img src="https://skillicons.dev/icons?i=express,spring,kafka&theme=dark&perline=3" />
+<img src="https://skillicons.dev/icons?i=express,spring,kafka,nginx,ubuntu&theme=dark&perline=3" />
 
 </td>
 <td width="25%" valign="top" align="center">
@@ -84,7 +84,9 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 <td width="25%" valign="top" align="center">
 
 ### Cloud & DevOps
-<img src="https://skillicons.dev/icons?i=aws,azure,docker,kubernetes,githubactions,ansible,prometheus&theme=dark&perline=4" />
+<img src="https://skillicons.dev/icons?i=aws,azure,docker,kubernetes,githubactions,ansible,prometheus,newrelic&theme=dark&perline=4" />
+
+[![New Relic](https://img.shields.io/badge/New%20Relic-00879D?style=for-the-badge&logo=newrelic&logoColor=white)](https://newrelic.com)
 
 </td>
 </tr>
