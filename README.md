@@ -39,7 +39,7 @@ Next-gen operating system on Rust and Linux 7.1. Core engine **ZethraAI** autono
 
 `Rust` `Linux Kernel` `On-Device AI` `Memory Safety` `Apache 2.0`
 
-[Website](https://zethraos.com) &nbsp;&middot;&nbsp; [GitHub Org](https://github.com/ZethraOS)
+[Website](https://www.zethraos.com) &nbsp;&middot;&nbsp; [GitHub Org](https://github.com/ZethraOS)
 
 </td>
 <td width="50%" valign="top">
@@ -51,7 +51,7 @@ Fully local coding assistant on Qwen2.5-Coder, Qwen3.5, and LLaMA3.2. Custom orc
 
 `Node.js` `LLM Orchestration` `Agentic AI` `Prompt Engineering`
 
-[Demo on LinkedIn](https://www.linkedin.com/in/er-mayank)
+[Demo on LinkedIn](https://www.linkedin.com/posts/er-mayank_ai-llm-softwareengineering-ugcPost-7442224272686698496-xyHd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAiuDf0BGAdP8JtXFRdYxGNFuHGipCucaAA)
 
 </td>
 </tr>
