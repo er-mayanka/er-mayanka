@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS folders
+.Spotlight-V100
+.Trashes
+
+# Resource fork files
+._*
