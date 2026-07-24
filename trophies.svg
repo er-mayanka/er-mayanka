@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="660" height="265" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#0d1117"/>
+  <style>
+    .title { font: bold 20px "Segoe UI", sans-serif; fill: #58a6ff; }
+    .emoji { font: 32px "Apple Color Emoji", "Noto Color Emoji", sans-serif; }
+    .label { font: bold 14px "Segoe UI", sans-serif; fill: #e6edf3; }
+    .desc { font: 12px "Segoe UI", sans-serif; fill: #8b949e; }
+  </style>
+  <text x="330.0" y="35" text-anchor="middle" class="title">🏆 GitHub Trophies</text>
+
+    <g transform="translate(15,65)">
+      <rect x="0" y="0" width="200" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="100.0" y="35" text-anchor="middle" class="emoji">🔄</text>
+      <text x="100.0" y="55" text-anchor="middle" class="label">Contributor</text>
+      <text x="100.0" y="70" text-anchor="middle" class="desc">51 PRs merged</text>
+    </g>
+    
+    <g transform="translate(230,65)">
+      <rect x="0" y="0" width="200" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="100.0" y="35" text-anchor="middle" class="emoji">🛠️</text>
+      <text x="100.0" y="55" text-anchor="middle" class="label">Creator</text>
+      <text x="100.0" y="70" text-anchor="middle" class="desc">17 repositories</text>
+    </g>
+    
+    <g transform="translate(445,65)">
+      <rect x="0" y="0" width="200" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="100.0" y="35" text-anchor="middle" class="emoji">🎖️</text>
+      <text x="100.0" y="55" text-anchor="middle" class="label">Senior</text>
+      <text x="100.0" y="70" text-anchor="middle" class="desc">7 years on GitHub</text>
+    </g>
+    
+    <g transform="translate(15,160)">
+      <rect x="0" y="0" width="200" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="100.0" y="35" text-anchor="middle" class="emoji">💻</text>
+      <text x="100.0" y="55" text-anchor="middle" class="label">Polyglot</text>
+      <text x="100.0" y="70" text-anchor="middle" class="desc">TypeScript, JavaScript, Shell, HTML</text>
+    </g>
+    </svg>
