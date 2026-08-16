@@ -140,8 +140,8 @@ Architected a fully local, multi-LLM coding assistant supporting Qwen, Mistral, 
 ## GitHub Stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api?username=er-mayanka&show_icons=true&theme=tokyonight&hide_border=true" />
-  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=er-mayanka&layout=compact&theme=tokyonight&hide_border=true" />
+  <img height="165" src="https://github-readme-stats.shion.dev/api?username=er-mayanka&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" />
+  <img height="165" src="https://github-readme-stats.shion.dev/api/top-langs/?username=er-mayanka&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
 
 <p align="center">
