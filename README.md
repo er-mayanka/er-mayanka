@@ -145,7 +145,7 @@ Architected a fully local, multi-LLM coding assistant supporting Qwen, Mistral, 
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=er-mayanka&theme=tokyonight&hide_border=true?cache_bust=1" alt="Streak stats" />
+  <img src="https://streak-stats.demolab.com/?user=er-mayanka&theme=tokyonight&hide_border=true&v=2" alt="Streak stats" />
 </p>
 
 <p align="center">
