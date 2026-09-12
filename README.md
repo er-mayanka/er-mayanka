@@ -145,7 +145,7 @@ Architected a fully local, multi-LLM coding assistant supporting Qwen, Mistral, 
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=er-mayanka&theme=tokyonight&hide_border=true&cache_bust=1" alt="Streak stats" />
+  <img src="https://streak-stats.demolab.com/?user=er-mayanka&theme=tokyonight&hide_border=true" alt="Streak stats" />
 </p>
 
 <p align="center">
@@ -170,8 +170,8 @@ Architected a fully local, multi-LLM coding assistant supporting Qwen, Mistral, 
 | [Influencer-Tracker](https://github.com/er-mayanka/Influencer-Tracker) | Scalable dashboard distributing workload across worker instances for influencer data tracking | `Node.js` `Scalable Architecture` |
 | [onedrive-poc](https://github.com/er-mayanka/onedrive-poc) | OAuth2-secured OneDrive file access manager with real-time permission tracking | `Express.js` `OAuth2` |
 | [Drone-Simulator-with-Angular-v16](https://github.com/er-mayanka/Drone-Simulator-with-Angular-v16) | Real-time drone motion simulation on Google Maps | `Angular` `Maps API` |
-| [Virtual-Wallet](https://github.com/er-mayanka/Virtual-Wallet) | Digital wallet with credit and debit ledger, exportable transaction history | `TypeScript` |
 | [Inventory-Management](https://github.com/er-mayanka/Inventory-Management) | Inventory tracking system | `TypeScript` |
+| [Virtual-Wallet](https://github.com/er-mayanka/Virtual-Wallet) | Digital wallet with credit and debit ledger, exportable transaction history | `TypeScript` |
 
 <br>
 
